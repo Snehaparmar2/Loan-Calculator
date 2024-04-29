@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        div{
+            max-width: 600px;
+            height: auto;
+            padding: 50px;
+            background-color:rgb(69, 195, 195);
+            color: white; 
+        }
+        h1{
+            margin-bottom: 10px;
+            text-transform: capitalize;
+            color: rgb(116, 12, 12);
+            font-size: 40px;
+            text-align: center;
+        }
+        h2{
+            margin-top: 20px;
+            text-transform: capitalize;
+            color: rgb(116, 12, 12);
+        }
+        lable{
+            display: inline-block;
+            margin-top: 30px;
+            color: black;
+            font-size: 20px;
+        }
+        input{
+            width: 400px;
+            padding: 10px 0;
+        }
+        .payment{
+            font-weight: 650;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    <div>
+        <h1>Loan calculator</h1>
+
+        <lable>Loan Amount: $</lable>&ensp; &ensp; &ensp; &ensp;
+     <input type="number"id="t1"><br><br>
+
+     <lable>Intrest Rate: %</lable>&ensp; &ensp; &ensp;
+     <input type="number"id="t2"><br><br>
+
+     
+     <lable>Month to Pay:</lable>&ensp; &ensp; &ensp; &ensp;&ensp;
+     <input type="number" id="t3"><br><br>
+
+     <lable class="payment" id="t4" onclick="calculate()">Monthly Payment:</lable>&ensp; &ensp; &ensp; &ensp;&ensp;
+
+
+    </div>
+    </main>
+    <script>
+        function calculate(){
+        var amount,interest,month,totalinterest,tp;
+          amount=+document.getElementById("t1").value;
+          interest=+document.getElementById("t2").value;
+          month =+document.getElementById("t3").value;
+          totalinterest=(amount*interest)/100;
+          tp=amount+totalinterest;
+          pay=tp/month;
+          document.getElementById("t4").innerHTML="Monthly Payment:"+pay;
+        }    
+    </script>
+</body>
+</html>
